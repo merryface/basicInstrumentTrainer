@@ -1,7 +1,10 @@
 const turnCalculator = require('./utils/turnCalculator.js');
 const getRandomHeading = require('./utils/getRandomHeading.js');
+const climbDescentCalculator = require('./utils/climbDescentCalculator.js');
+const getRandomAltitude = require('./utils/getRandomAltitude.js');
 
-console.log(turnCalculator(0, getRandomHeading(0)));
+
+console.log(getRandomAltitude(2000));
 
 
 
