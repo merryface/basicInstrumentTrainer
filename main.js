@@ -12,6 +12,9 @@ import {generateInstruction} from './logic/utils/instructions/generateInstructio
 // updateUI
 import {updateUI} from './logic/updateUI.js';
 
+// countdown
+import {setCountdown} from './logic/utils/setCountdown.js';
+
 ((d) => {
   // create an aircraft
   const aircraft = new Aircraft();
@@ -23,12 +26,20 @@ import {updateUI} from './logic/updateUI.js';
 
   d.getElementById('generateInstruction').addEventListener('click', () => {
     const instructionData = generateInstruction(aircraft)
-
+    console.log(instructionData)
     if (instructionData.instructionType === 'heading') aircraft.setHeading(instructionData.heading);
     if (instructionData.instructionType === 'altitude') aircraft.setAltitude(instructionData.altitude);
     if (instructionData.instructionType === 'speed') aircraft.setSpeed(instructionData.speed);
 
     updateUI(d, aircraft, instructionData.instruction)
     
+    // set timer
+    let countDown
+    if (instructionData.instructionType === 'heading') countDown = setCountdown(instructionData.turnCalculation.turnTime);
+    if (instructionData.instructionType === 'altitude') countDown = setCountdown(instructionData.climbDescentCalculation.timeToAlt);
+    if (instructionData.instructionType === 'speed') countDown = setCountdown(instructionData.speedCalculation.accelerationTime);
+    console.log(countDown)
+
+
   })
 })(document)
