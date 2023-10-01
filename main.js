@@ -9,10 +9,12 @@ import { formatAirspeed } from './logic/utils/formatters/formatAirspeed.js';
 // instruction
 import {generateInstruction} from './logic/utils/instructions/generateInstruction.js';
 
+// updateUI
+import {updateUI} from './logic/updateUI.js';
+
 ((d) => {
   // create an aircraft
   const aircraft = new Aircraft();
-  console.log(aircraft);
 
   // set initial aircraft values
   d.getElementById('targetHeading').innerText = formatHeading(aircraft.heading);
@@ -21,10 +23,12 @@ import {generateInstruction} from './logic/utils/instructions/generateInstructio
 
   d.getElementById('generateInstruction').addEventListener('click', () => {
     const instructionData = generateInstruction(aircraft)
-    aircraft.setHeading(instructionData.heading);
-    aircraft.setAltitude(instructionData.altitude);
-    aircraft.setSpeed(instructionData.speed);
-    console.log(aircraft, instructionData);
+
+    if (instructionData.instructionType === 'heading') aircraft.setHeading(instructionData.heading);
+    if (instructionData.instructionType === 'altitude') aircraft.setAltitude(instructionData.altitude);
+    if (instructionData.instructionType === 'speed') aircraft.setSpeed(instructionData.speed);
+
+    updateUI(d, aircraft, instructionData.instruction)
     
   })
 })(document)

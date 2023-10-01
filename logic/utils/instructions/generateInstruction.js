@@ -19,9 +19,7 @@ import {verticalInstruction} from './verticalInstruction.js';
 import {speedInstruction} from './speedInstruction.js';
 
 export function generateInstruction(aircraft) {
-  // const selectedInstruction = Math.floor(Math.random() * 3);
-  const selectedInstruction = 2;
-
+  const selectedInstruction = Math.floor(Math.random() * 3);
 
   // heading
   if (selectedInstruction === 0) {
@@ -30,6 +28,7 @@ export function generateInstruction(aircraft) {
     const headingInstruction = turnInstruction(aircraft.callsign, turnCalculation, formatHeading(newHeading));
 
     return {
+      instructionType: 'heading',
       instruction: headingInstruction,
       heading: newHeading,
       turnCalculation: turnCalculation
@@ -43,6 +42,7 @@ export function generateInstruction(aircraft) {
     const altitudeInstruction = verticalInstruction(aircraft.callsign, climbDescentCalculation, formatAltitude(newAltitude));
 
     return {
+      instructionType: 'altitude',
       instruction: altitudeInstruction,
       altitude: newAltitude,
       climbDescentCalculation: climbDescentCalculation
@@ -56,6 +56,7 @@ export function generateInstruction(aircraft) {
     const airspeedInstruction = speedInstruction(aircraft.callsign, formatAirspeed(newSpeed));
 
     return {
+      instructionType: 'speed',
       instruction: airspeedInstruction,
       speed: newSpeed,
       speedCalculation: speedCalculation
