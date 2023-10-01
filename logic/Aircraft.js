@@ -1,11 +1,15 @@
 export class Aircraft {
-  constructor(speed = 105, altitude = 3000, heading = 360) {
+  constructor(callsign = "A-BCDE", speed = 105, altitude = 3000, heading = 360) {
     this.speed = speed;
     this.altitude = altitude;
     this.heading = heading;
+    this.callsign = callsign;
   }
 
-  // Methods to set speed, altitude, and heading
+  setCallsign(newCallsign) {
+    this.callsign = newCallsign;
+  }
+
   setSpeed(newSpeed) {
     this.speed = newSpeed;
   }
