@@ -13,21 +13,17 @@ import {formatHeading} from './logic/utils/formatters/formatHeading.js';
 
 // Aircraft
 import {Aircraft} from './logic/Aircraft.js';
+import { formatAltitude } from './logic/utils/formatters/formatAltitude.js';
 
 
 ((d) => {
   // create an aircraft
   const aircraft = new Aircraft();
 
-
-
+  // set initial aircraft values
   d.getElementById('targetHeading').innerText = formatHeading(aircraft.getHeading());
+  d.getElementById('targetAltitude').innerText = formatAltitude(aircraft.getAltitude());
 
-  console.log("I exist!")
-  
-  
-  
-  
   
   
   
