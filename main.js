@@ -2,9 +2,10 @@ const turnCalculator = require('./utils/turnCalculator.js');
 const getRandomHeading = require('./utils/getRandomHeading.js');
 const climbDescentCalculator = require('./utils/climbDescentCalculator.js');
 const getRandomAltitude = require('./utils/getRandomAltitude.js');
+const getRandomSpeed = require('./utils/getRandomSpeed.js');
 
 
-console.log(getRandomAltitude(2000));
+console.log(getRandomSpeed(80));
 
 
 
