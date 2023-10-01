@@ -14,6 +14,7 @@ import {formatHeading} from './logic/utils/formatters/formatHeading.js';
 // Aircraft
 import {Aircraft} from './logic/Aircraft.js';
 import { formatAltitude } from './logic/utils/formatters/formatAltitude.js';
+import { formatAirspeed } from './logic/utils/formatters/formatAirspeed.js';
 
 
 ((d) => {
@@ -23,6 +24,7 @@ import { formatAltitude } from './logic/utils/formatters/formatAltitude.js';
   // set initial aircraft values
   d.getElementById('targetHeading').innerText = formatHeading(aircraft.getHeading());
   d.getElementById('targetAltitude').innerText = formatAltitude(aircraft.getAltitude());
+  d.getElementById('targetAirspeed').innerText = formatAirspeed(aircraft.getSpeed());
 
   
   

@@ -1,5 +1,5 @@
 export class Aircraft {
-  constructor(speed = 70, altitude = 3000, heading = 360) {
+  constructor(speed = 105, altitude = 3000, heading = 360) {
     this.speed = speed;
     this.altitude = altitude;
     this.heading = heading;
