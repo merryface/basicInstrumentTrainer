@@ -16,6 +16,7 @@ import {updateUI} from './logic/updateUI.js';
 import {setCountdown} from './logic/utils/setCountdown.js';
 
 let countDown;
+let isFlying = false;
 
 const triggerInstruction = (doc, aircraft) => {
   const instructionData = generateInstruction(aircraft)
@@ -39,16 +40,22 @@ const triggerInstruction = (doc, aircraft) => {
   const currentAircraft = new Aircraft();
 
   // set initial aircraft values
-  d.getElementById('targetHeading').innerText = formatHeading(currentAircraft.heading);
-  d.getElementById('targetAltitude').innerText = formatAltitude(currentAircraft.altitude);
-  d.getElementById('targetAirspeed').innerText = formatAirspeed(currentAircraft.speed);
+  updateUI(d, currentAircraft, "Standby for instructions");
 
   d.getElementById('generateInstruction').addEventListener('click', () => {
     // call triggerInstruction, then call it repeadedly with a delay of countDown*1000, until the button is clicked again
-    triggerInstruction(d, currentAircraft);
-    setInterval(() => {
+    if (!isFlying) {
+      d.getElementById('generateInstruction').innerText = "STOP";
       triggerInstruction(d, currentAircraft);
-    }, countDown*1000);
+      isFlying = true;
+      setInterval(() => {
+        triggerInstruction(d, currentAircraft);
+      }, countDown*1000); 
+    }
 
+    if (isFlying) {
+      isFlying = false;
+      clearInterval();
+    }
   })
 })(document);
