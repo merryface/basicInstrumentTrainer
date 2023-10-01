@@ -20,7 +20,7 @@ import {speedInstruction} from './speedInstruction.js';
 
 export function generateInstruction(aircraft) {
   // const selectedInstruction = Math.floor(Math.random() * 3);
-  const selectedInstruction = 1;
+  const selectedInstruction = 2;
 
 
   // heading
@@ -46,6 +46,19 @@ export function generateInstruction(aircraft) {
       instruction: altitudeInstruction,
       altitude: newAltitude,
       climbDescentCalculation: climbDescentCalculation
+    }
+  }
+
+  // speed
+  if (selectedInstruction === 2) {
+    const newSpeed = getRandomSpeed(aircraft.speed);
+    const speedCalculation = speedCalculator(aircraft.speed, newSpeed);
+    const airspeedInstruction = speedInstruction(aircraft.callsign, formatAirspeed(newSpeed));
+
+    return {
+      instruction: airspeedInstruction,
+      speed: newSpeed,
+      speedCalculation: speedCalculation
     }
   }
 }

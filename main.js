@@ -23,6 +23,7 @@ import {generateInstruction} from './logic/utils/instructions/generateInstructio
     const instructionData = generateInstruction(aircraft)
     aircraft.setHeading(instructionData.heading);
     aircraft.setAltitude(instructionData.altitude);
+    aircraft.setSpeed(instructionData.speed);
     console.log(aircraft, instructionData);
     
   })

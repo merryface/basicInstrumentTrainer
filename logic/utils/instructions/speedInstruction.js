@@ -1,3 +1,3 @@
 export function speedInstruction(callsign, speed) {
-  return `${callsign}, ${speed} knots.`
+  return `${callsign}, speed ${speed} knots.`
 }
