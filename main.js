@@ -13,12 +13,10 @@ import {Aircraft} from './logic/Aircraft.js';
 
 
 ((d) => {
-
-  
-
-  
   // create an aircraft
   const aircraft = new Aircraft();
+
+  d.getElementById('targetHeading').innerText = aircraft.getHeading();
 
   console.log("I exist!")
   
