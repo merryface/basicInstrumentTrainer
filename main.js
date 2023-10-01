@@ -22,12 +22,7 @@ import { formatAirspeed } from './logic/utils/formatters/formatAirspeed.js';
   const aircraft = new Aircraft();
 
   // set initial aircraft values
-  d.getElementById('targetHeading').innerText = formatHeading(aircraft.getHeading());
-  d.getElementById('targetAltitude').innerText = formatAltitude(aircraft.getAltitude());
-  d.getElementById('targetAirspeed').innerText = formatAirspeed(aircraft.getSpeed());
-
-  
-  
-  
-  
+  d.getElementById('targetHeading').innerText = formatHeading(aircraft.heading);
+  d.getElementById('targetAltitude').innerText = formatAltitude(aircraft.altitude);
+  d.getElementById('targetAirspeed').innerText = formatAirspeed(aircraft.speed);
 })(document)

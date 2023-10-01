@@ -17,17 +17,4 @@ export class Aircraft {
   setHeading(newHeading) {
     this.heading = newHeading;
   }
-
-  // Methods to get speed, altitude, and heading
-  getSpeed() {
-    return this.speed;
-  }
-
-  getAltitude() {
-    return this.altitude;
-  }
-
-  getHeading() {
-    return this.heading;
-  }
 }
