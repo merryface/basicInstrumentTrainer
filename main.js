@@ -1,19 +1,32 @@
 // Generators
-const getRandomHeading = require('./logic/utils/generators/getRandomHeading.js');
-const getRandomAltitude = require('./logic/utils/generators/getRandomAltitude.js');
-const getRandomSpeed = require('./logic/utils/generators/getRandomSpeed.js');
+import {getRandomHeading} from './logic/utils/generators/getRandomHeading.js';
+import {getRandomAltitude} from './logic/utils/generators/getRandomAltitude.js';
+import {getRandomSpeed} from './logic/utils/generators/getRandomSpeed.js';
 
 // Calculators
-const turnCalculator = require('./logic/utils/calculators/turnCalculator.js');
-const climbDescentCalculator = require('./logic/utils/calculators/climbDescentCalculator.js');
-const speedCalculator = require('./logic/utils/calculators/speedCalculator.js');
+import {turnCalculator} from './logic/utils/calculators/turnCalculator.js';
+import {climbDescentCalculator} from './logic/utils/calculators/climbDescentCalculator.js';
+import {speedCalculator} from './logic/utils/calculators/speedCalculator.js';
 
 // Aircraft
-const Aircraft = require('./logic/Aircraft.js');
-
-const aircraft = new Aircraft();
-console.log(aircraft.getSpeed());
+import {Aircraft} from './logic/Aircraft.js';
 
 
+((d) => {
 
+  
 
+  
+  // create an aircraft
+  const aircraft = new Aircraft();
+
+  console.log("I exist!")
+  
+  
+  
+  
+  
+  
+  
+  
+})(document)

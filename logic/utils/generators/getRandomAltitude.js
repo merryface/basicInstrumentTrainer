@@ -1,4 +1,4 @@
-function getRandomAltitude(currentAltitude) {
+export function getRandomAltitude(currentAltitude) {
   let newAlt = Math.floor(Math.random() * 50) * 100
 
   if (newAlt > 5000) newAlt = 5000
@@ -12,5 +12,3 @@ function getRandomAltitude(currentAltitude) {
 
   return newAlt
 }
-
-module.exports = getRandomAltitude;

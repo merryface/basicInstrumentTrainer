@@ -1,4 +1,4 @@
-function getRandomHeading(previousHeading, minDifference=20) {
+export function getRandomHeading(previousHeading, minDifference=20) {
   // Calculate the minimum and maximum allowed headings in intervals of 5 degrees
   const minInterval = 5;
   const minHeading = (previousHeading - minDifference + 360) % 360;
@@ -16,5 +16,3 @@ function getRandomHeading(previousHeading, minDifference=20) {
 
   return randomHeading;
 }
-
-module.exports = getRandomHeading;

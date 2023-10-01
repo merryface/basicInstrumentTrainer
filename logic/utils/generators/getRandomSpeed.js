@@ -1,4 +1,4 @@
-function getRandomSpeed(currentSpeed) {
+export function getRandomSpeed(currentSpeed) {
   let speedAddition = Math.round(((Math.random() * 9) - 0.5)) * 5
   let newSpeed = 70 + speedAddition;
 
@@ -8,5 +8,3 @@ function getRandomSpeed(currentSpeed) {
   }
   return newSpeed;
 }
-
-module.exports = getRandomSpeed;

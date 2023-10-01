@@ -1,4 +1,4 @@
-function climbDescentCalculator(currentAltitude, targetAltitude) {
+export function climbDescentCalculator(currentAltitude, targetAltitude) {
   // calculate the time in seconds to climb or descend assuming 500 feet per minute
   const altitudeDifference = targetAltitude - currentAltitude
   const absoluteAltitudeDifference = Math.abs(altitudeDifference);
@@ -9,5 +9,3 @@ function climbDescentCalculator(currentAltitude, targetAltitude) {
     isClimb,
   }
 }
-
-module.exports = climbDescentCalculator;

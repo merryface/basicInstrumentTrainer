@@ -1,4 +1,4 @@
-class Aircraft {
+export class Aircraft {
   constructor(speed = 70, altitude = 3000, heading = 360) {
     this.speed = speed;
     this.altitude = altitude;
@@ -31,5 +31,3 @@ class Aircraft {
     return this.heading;
   }
 }
-
-module.exports = Aircraft;

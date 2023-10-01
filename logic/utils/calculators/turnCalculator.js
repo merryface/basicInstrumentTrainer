@@ -1,5 +1,5 @@
 // Function to calculate the time for the shortest turn between two headings
-function calculateTurn(startHeading, endHeading, turnRate = 3) {
+export function turnCalculator(startHeading, endHeading, turnRate = 3) {
   // Ensure headings are in the range [0, 360)
   startHeading = (startHeading + 360) % 360;
   endHeading = (endHeading + 360) % 360;
@@ -24,4 +24,3 @@ function calculateTurn(startHeading, endHeading, turnRate = 3) {
   return { turnDirection, turnTime };
 }
 
-module.exports = calculateTurn;
