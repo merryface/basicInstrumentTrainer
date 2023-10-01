@@ -8,8 +8,12 @@ const turnCalculator = require('./logic/utils/calculators/turnCalculator.js');
 const climbDescentCalculator = require('./logic/utils/calculators/climbDescentCalculator.js');
 const speedCalculator = require('./logic/utils/calculators/speedCalculator.js');
 
+// Aircraft
+const Aircraft = require('./logic/Aircraft.js');
 
-console.log(getRandomSpeed(80));
+const aircraft = new Aircraft();
+console.log(aircraft.getSpeed());
+
 
 
 
