@@ -53,7 +53,7 @@ export function generateInstruction(aircraft) {
   if (selectedInstruction === 2) {
     const newSpeed = getRandomSpeed(aircraft.speed);
     const speedCalculation = speedCalculator(aircraft.speed, newSpeed);
-    const airspeedInstruction = speedInstruction(aircraft.callsign, formatAirspeed(newSpeed));
+    const airspeedInstruction = speedInstruction(aircraft.callsign, newSpeed);
 
     return {
       instructionType: 'speed',

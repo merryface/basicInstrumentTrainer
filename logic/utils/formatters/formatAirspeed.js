@@ -1,3 +1,3 @@
 export function formatAirspeed(airspeed) {
-  return `${airspeed}`
+  return `${airspeed}kt`
 }

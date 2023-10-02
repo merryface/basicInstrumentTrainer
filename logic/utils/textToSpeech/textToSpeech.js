@@ -1,7 +1,7 @@
 export function textToSpeech(textToSpeak) {
   if ('speechSynthesis' in window) {
     const utterance = new SpeechSynthesisUtterance(textToSpeak);
-    utterance.voice = speechSynthesis.getVoices()[0]; // Choose a voice (optional)
+    utterance.voice = speechSynthesis.getVoices()[0];
     utterance.rate = 1.0; // Speech rate (optional)
     utterance.pitch = 1.0; // Speech pitch (optional)
 
