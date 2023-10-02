@@ -31,7 +31,6 @@ const triggerInstruction = (doc, aircraft) => {
   if (instructionData.instructionType === 'altitude') countDown = setCountdown(instructionData.climbDescentCalculation.timeToAlt);
   if (instructionData.instructionType === 'speed') countDown = setCountdown(instructionData.speedCalculation.accelerationTime);
 
-  console.log(countDown);
 }
 
 
@@ -45,9 +44,9 @@ const triggerInstruction = (doc, aircraft) => {
   d.getElementById('generateInstruction').addEventListener('click', () => {
     // call triggerInstruction, then call it repeadedly with a delay of countDown*1000, until the button is clicked again
     if (!isFlying) {
-      d.getElementById('generateInstruction').innerText = "STOP";
-      triggerInstruction(d, currentAircraft);
       isFlying = true;
+      d.getElementById('generateInstruction').innerText = "Stop";
+      triggerInstruction(d, currentAircraft);
       setInterval(() => {
         triggerInstruction(d, currentAircraft);
       }, countDown*1000); 
