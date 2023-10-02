@@ -15,6 +15,9 @@ import {updateUI} from './logic/updateUI.js';
 // countdown
 import {setCountdown} from './logic/utils/setCountdown.js';
 
+// Text to speech
+import { textToSpeech } from './logic/utils/textToSpeech.js';
+
 let countDown;
 let isFlying = false;
 
@@ -25,7 +28,8 @@ const triggerInstruction = (doc, aircraft) => {
   if (instructionData.instructionType === 'speed') aircraft.setSpeed(instructionData.speed);
 
   updateUI(doc, aircraft, instructionData.instruction)
-    
+  textToSpeech(instructionData.instruction)
+
   // set timer
   if (instructionData.instructionType === 'heading') countDown = setCountdown(instructionData.turnCalculation.turnTime);
   if (instructionData.instructionType === 'altitude') countDown = setCountdown(instructionData.climbDescentCalculation.timeToAlt);
