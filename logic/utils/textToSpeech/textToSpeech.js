@@ -13,7 +13,7 @@ export function textToSpeech(textToSpeak) {
     // Check if the device is iOS and manually set the voice
     if (isIOS()) {
       // Manually set an English voice known to exist on iOS
-      utterance.voice = speechSynthesis.getVoices().find(voice => voice.name === 'Samantha (Enhanced)');
+      utterance.lang = 'en-GB';
     }
 
     utterance.onstart = () => {
