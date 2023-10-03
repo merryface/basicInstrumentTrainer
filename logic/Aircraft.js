@@ -7,7 +7,7 @@ export class Aircraft {
   }
 
   setCallsign(newCallsign) {
-    this.callsign = newCallsign;
+    this.callsign = newCallsign.toUpperCase();
   }
 
   setSpeed(newSpeed) {
