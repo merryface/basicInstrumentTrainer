@@ -65,4 +65,16 @@ const triggerInstruction = (doc, aircraft) => {
       clearInterval();
     }
   })
+
+  // set callsign
+  d.getElementById('setCallsignButton').addEventListener('click', () => {
+    const currentCallsign = d.getElementById('desiredCallsign').innerText
+    currentAircraft.setCallsign(currentCallsign.toUpperCase())
+    d.getElementById('desiredCallsign').innerText = ""
+
+    isFlying ?
+    updateUI(d, currentAircraft,  generateInstruction(currentAircraft))
+    :
+    updateUI(d, currentAircraft,  `${currentCallsign}, standby`)
+  })
 })(document);
