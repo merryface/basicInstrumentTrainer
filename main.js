@@ -83,6 +83,20 @@ const triggerInstruction = (doc, aircraft) => {
     updateUI(d, currentAircraft, `${currentCallsign}, standby`)
   })
 
+  // Display chosen altitude
+  d.getElementById('altitude').oninput = function() {
+    const slider = d.getElementById('currentAltSliderPosition')
+    slider.innerText = this.value*100
+    console.log(slider, this.value)
+  }
+
+  // Set Max Altitude
+  d.getElementById('setMaxAltitude').addEventListener('click', () => {
+    const maxAltitude = d.getElementById('altitude').value*100
+    currentAircraft.setMaxAltitude(maxAltitude)
+    d.getElementById('selectedMaxAltitude').innerText = formatAltitude(maxAltitude)
+  })
+
   // close instruction modal
   d.getElementById('closeInstructionalModal').addEventListener('click', () => {
     d.getElementById('instructionsModal').style.display = "none"
@@ -102,4 +116,6 @@ const triggerInstruction = (doc, aircraft) => {
   d.getElementById('closeSettingsModal').addEventListener('click', () => {
     d.getElementById('settingsModal').style.display = "none"
   })
+
+
 })(document);

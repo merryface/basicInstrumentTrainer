@@ -37,7 +37,7 @@ export function generateInstruction(aircraft) {
 
   // altitude
   if (selectedInstruction === 1) {
-    const newAltitude = getRandomAltitude(aircraft.altitude);
+    const newAltitude = getRandomAltitude(aircraft.altitude, aircraft.minAltitude, aircraft.maxAltitude);
     const climbDescentCalculation = climbDescentCalculator(aircraft.altitude, newAltitude);
     const altitudeInstruction = verticalInstruction(aircraft.callsign, climbDescentCalculation, formatAltitude(newAltitude));
 
