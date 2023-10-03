@@ -1,0 +1,35 @@
+* {
+  font-family: 'Courier New', Courier, monospace;
+  box-sizing: border-box;
+}
+
+body {
+  margin:0;
+  padding: 1rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+.targets {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+}
+
+.target {
+  width: 30rem;
+  max-width: 80%;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+
+
