@@ -33,7 +33,7 @@ h1 {
 .target {
   width: 30rem;
   max-width: 80%;
-  border: 1px solid black;
+  border: 1px solid #0E1B8F; ;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -42,7 +42,7 @@ h1 {
 }
 
 .target p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 #instruction {
@@ -51,12 +51,12 @@ h1 {
   font-size: 2rem;
 }
 
-#generateInstruction {
+#generateInstruction, #setCallsignButton {
   background: #fff;
-  border: 1px solid black;
+  border: 1px solid #0E1B8F; ;
   border-radius: 5px;
   font-size: 1.5rem;
-  height: 4rem;
+  height: 3rem;
   width: 30rem;
   max-width: 80%;
   margin: auto;
@@ -64,9 +64,9 @@ h1 {
   text-transform: uppercase;
 }
 
-#generateInstruction:hover {
+#generateInstruction:hover, #setCallsignButton:hover {
   cursor: pointer;
-  background-color: #000;
+  background-color: #0E1B8F;
   color: #fff;
   transition: color ease-in-out 0.3s, background-color ease-in-out 0.3s;
 }
@@ -75,23 +75,26 @@ h1 {
   width: 100%;
   margin-top: 2rem;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 label {
+  border-top: solid 1px #0E1B8F;
+  padding-top: 0.5rem;
   display: block;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 30rem;
   max-width: 80%;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
 }
 
 input {
-  height: 2.5rem;
-  font-size: 1.5rem;
-
+  height: 2rem;
+  font-size: 1.1rem;
 }
 
 
