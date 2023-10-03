@@ -36,6 +36,10 @@ h1 {
   align-items: center;
 }
 
+.target p {
+  font-size: 1.5rem;
+}
+
 #instruction {
   text-align: center;
   margin-top: 3rem;
