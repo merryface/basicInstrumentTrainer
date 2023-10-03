@@ -1,0 +1,23 @@
+#settingsModal button {
+  margin-top: 0.5rem;
+  height: 2rem;
+}
+
+.setCallsign {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  height: 2rem;
+}
+
+label {
+  margin-bottom: 1rem;
+}
+
+#selectedMaxAltitude p {
+  margin-bottom: 0;
+}

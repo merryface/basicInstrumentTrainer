@@ -165,5 +165,15 @@ a {
   transition: color ease-in-out 0.2s, background-color ease-in-out 0.2s;
 }
 
+h2 {
+  color: #fff;
+  margin: 0;
+}
+
+label, label p, label span {
+  color: #fff;
+  margin: 0;
+}
+
 
 
