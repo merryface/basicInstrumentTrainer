@@ -68,9 +68,9 @@ const triggerInstruction = (doc, aircraft) => {
 
   // set callsign
   d.getElementById('setCallsignButton').addEventListener('click', () => {
-    const currentCallsign = d.getElementById('desiredCallsign').innerText
+    const currentCallsign = d.getElementById('desiredCallsign').value
     currentAircraft.setCallsign(currentCallsign.toUpperCase())
-    d.getElementById('desiredCallsign').innerText = ""
+    d.getElementById('desiredCallsign').value = ""
 
     isFlying ?
     updateUI(d, currentAircraft,  generateInstruction(currentAircraft))
