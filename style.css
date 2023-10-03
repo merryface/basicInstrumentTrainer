@@ -1,6 +1,7 @@
 * {
   font-family: 'Courier New', Courier, monospace;
   box-sizing: border-box;
+  color: #0E1B8F;
 }
 
 body {
@@ -51,6 +52,7 @@ h1 {
   max-width: 80%;
   margin: auto;
   display: block;
+  text-transform: uppercase;
 }
 
 #generateInstruction:hover {
