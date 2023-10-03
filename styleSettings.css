@@ -22,6 +22,10 @@
   align-items: center;
 }
 
+#desiredCallsign {
+  margin-top: 0.5rem;
+}
+
 input {
   height: 2rem;
 }
