@@ -141,7 +141,7 @@ a {
 }
 
 #settingsModal {
-  /* display: none; */
+  display: none;
 }
 
 .modalInstructionsText {
