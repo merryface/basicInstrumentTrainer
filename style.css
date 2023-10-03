@@ -98,5 +98,11 @@ input {
   text-transform: uppercase;
 }
 
+a {
+  margin-top: 3rem;
+  text-align: center;
+  display: block;
+}
+
 
 
