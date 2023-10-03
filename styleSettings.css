@@ -1,6 +1,9 @@
 #settingsModal button {
   margin-top: 0.5rem;
   height: 2rem;
+  background: #0E1B8F;
+  border: #fff 1px solid;
+  color: #fff;
 }
 
 .setCallsign {
@@ -20,4 +23,21 @@ label {
 
 #selectedMaxAltitude p {
   margin-bottom: 0;
+}
+
+.changeSpeed {
+  width: 2rem;
+  height: 2rem;
+  background: #0E1B8F;
+  border: #fff 1px solid;
+  color: #fff;
+  border-radius: 2px;
+}
+
+.changeSpeed:hover, #settingsModal button:hover {
+  cursor: pointer;
+}
+
+.plusMinusButtons {
+  margin-bottom: 1rem;
 }
