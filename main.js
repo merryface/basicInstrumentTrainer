@@ -52,6 +52,8 @@ const triggerInstruction = (doc, aircraft) => {
   d.getElementById('generateInstruction').addEventListener('click', () => {
     // call triggerInstruction, then call it repeadedly with a delay of countDown*1000, until the button is clicked again
     if (!isFlying) {
+      console.log("start flying");
+      
       isFlying = true;
       d.getElementById('generateInstruction').innerText = "Skip to next";
       triggerInstruction(d, currentAircraft);
@@ -61,6 +63,7 @@ const triggerInstruction = (doc, aircraft) => {
     }
 
     if (isFlying) {
+      console.log("stop flying");
       isFlying = false;
       clearInterval();
     }
