@@ -51,7 +51,7 @@ h1 {
   font-size: 2rem;
 }
 
-#generateInstruction, #setCallsignButton {
+#generateInstruction {
   background: #fff;
   border: 1px solid #0E1B8F;
   border-radius: 5px;
@@ -64,19 +64,11 @@ h1 {
   text-transform: uppercase;
 }
 
-#generateInstruction:hover, #setCallsignButton:hover {
+#generateInstruction:hover {
   cursor: pointer;
   background-color: #0E1B8F;
   color: #fff;
   transition: color ease-in-out 0.3s, background-color ease-in-out 0.3s;
-}
-
-.setCallsign {
-  width: 100%;
-  margin-top: 2rem;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
 
 label {
@@ -90,12 +82,6 @@ label {
   max-width: 80%;
   font-size: 1.3rem;
   margin-bottom: 1rem;
-}
-
-input {
-  height: 2rem;
-  font-size: 1.1rem;
-  text-transform: uppercase;
 }
 
 a {
@@ -118,6 +104,10 @@ a {
   bottom: 3rem;
 }
 
+#openInstruction:hover, #openSettings:hover {
+  cursor: pointer;
+}
+
 #openSettings {
   left: 5rem;
 }
@@ -126,9 +116,9 @@ a {
   color:#fff;
 }
 
-#instructionsModal {
+#instructionsModal, #settingsModal {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   top: 0;
   width: 100vw;
@@ -136,7 +126,7 @@ a {
   background-color: rgba(0,0,0,0.4);
 }
 
-.modalInstructions {
+.modalInstructions, .settings {
   background-color: #0E1B8F;
   width: 90%;
   height: 90%;
@@ -148,6 +138,10 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#settingsModal {
+  /* display: none; */
 }
 
 .modalInstructionsText {

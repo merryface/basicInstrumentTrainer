@@ -91,4 +91,14 @@ const triggerInstruction = (doc, aircraft) => {
   d.getElementById('openInstruction').addEventListener('click', () => {
     d.getElementById('instructionsModal').style.display = "block"
   })
+
+  // open settings modal
+  d.getElementById('openSettings').addEventListener('click', () => {
+    d.getElementById('settingsModal').style.display = "block"
+  })
+
+  // close settings modal
+  d.getElementById('closeSettingsModal').addEventListener('click', () => {
+    d.getElementById('settingsModal').style.display = "none"
+  })
 })(document);

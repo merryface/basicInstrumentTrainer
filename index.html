@@ -27,14 +27,6 @@
     <p id="instruction">Standby for instruction</p>
     <button id="generateInstruction">Commence</button>
 
-    <div class="setCallsign">
-      <label>
-        Callsign
-        <input id="desiredCallsign" type="text">
-      </label>
-      <button id="setCallsignButton">Set callsign</button>
-    </div>
-
       <a href="https://www.anc-academy.aero/">ANC Academy</a>
   </div>
 
@@ -50,6 +42,19 @@
 
   <div id="openSettings">
     <i class="fas fa-cog"></i>
+  </div>
+  <div id="settingsModal">
+    <div class="settings">
+      <div class="setCallsign">
+        <label>
+          Callsign
+          <input id="desiredCallsign" type="text">
+        </label>
+        <button id="setCallsignButton">Set callsign</button>
+      </div>
+
+      <button class="closeModal" id="closeSettingsModal">Close</button>
+    </div>
   </div>
 </body>
 </html>
