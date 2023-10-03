@@ -1,7 +1,16 @@
 export function textToSpeech(textToSpeak) {
   if ('speechSynthesis' in window) {
     const utterance = new SpeechSynthesisUtterance(textToSpeak);
-    utterance.voice = speechSynthesis.getVoices()[0];
+    const voices = speechSynthesis.getVoices();
+    
+    // Find and set the desired voice (e.g., English US)
+    const desiredVoice = voices.find((voice) => voice.lang === 'en-US');
+    if (desiredVoice) {
+      utterance.voice = desiredVoice;
+    } else {
+      console.warn('Desired voice (en-US) not found. Using the default voice.');
+    }
+
     utterance.lang = 'en-US';
     utterance.rate = 1.0; // Speech rate (optional)
     utterance.pitch = 1.0; // Speech pitch (optional)
