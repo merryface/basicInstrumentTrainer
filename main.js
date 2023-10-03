@@ -79,11 +79,16 @@ const triggerInstruction = (doc, aircraft) => {
     isFlying ?
     updateUI(d, currentAircraft,  generateInstruction(currentAircraft))
     :
-    updateUI(d, currentAircraft,  `${currentCallsign}, standby`)
+    updateUI(d, currentAircraft, `${currentCallsign}, standby`)
   })
 
   // close instruction modal
   d.getElementById('closeInstructionalModal').addEventListener('click', () => {
     d.getElementById('instructionsModal').style.display = "none"
+  })
+
+  // open instruction modal
+  d.getElementById('openInstruction').addEventListener('click', () => {
+    d.getElementById('instructionsModal').style.display = "block"
   })
 })(document);

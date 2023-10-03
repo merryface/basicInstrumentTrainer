@@ -104,6 +104,20 @@ a {
   display: block;
 }
 
+#openInstruction {
+  background-color: #0E1B8F;
+  color: #fff;
+  margin: 0;
+  padding: 1rem;
+  z-index: 1;
+  position: fixed;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  bottom: 3rem;
+}
+
 #instructionsModal {
   position: fixed;
   z-index: 1;
