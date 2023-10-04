@@ -99,11 +99,23 @@ const triggerInstruction = (doc, aircraft) => {
   // increase min speed
   d.getElementById('increaseMinSpeed').addEventListener('click', () => {
     const minSpeed = currentAircraft.minSpeed
+    if (minSpeed < currentAircraft.maxSpeed - 5) {
     currentAircraft.setMinSpeed(minSpeed + 5)
     d.getElementById('selectedMinSpeed').innerText = formatAirspeed(currentAircraft.minSpeed)
+    }
   })
 
   // decrease min speed
+  d.getElementById('reduceMinSpeed').addEventListener('click', () => {
+    const minSpeed = currentAircraft.minSpeed
+    if (minSpeed > 50) {
+      currentAircraft.setMinSpeed(minSpeed - 5)
+      d.getElementById('selectedMinSpeed').innerText = formatAirspeed(currentAircraft.minSpeed)
+    }
+  })
+
+
+  // increase min speed
 
   // increase max speed
 
