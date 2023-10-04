@@ -3,7 +3,7 @@ export class Aircraft {
     callsign = "A-BCDE",
     speed = 105,
     minSpeed = 70,
-    maxSpeed = 110,
+    maxSpeed = 115,
     altitude = 3000,
     minAltitude = 2000,
     maxAltitude = 5000,

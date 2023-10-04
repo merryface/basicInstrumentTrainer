@@ -114,12 +114,23 @@ const triggerInstruction = (doc, aircraft) => {
     }
   })
 
-
-  // increase min speed
-
   // increase max speed
+  d.getElementById('increaseMaxSpeed').addEventListener('click', () => {
+    const maxSpeed = currentAircraft.maxSpeed
+    if (maxSpeed < 250) {
+      currentAircraft.setMaxSpeed(maxSpeed + 5)
+      d.getElementById('selectedMaxSpeed').innerText = formatAirspeed(currentAircraft.maxSpeed)
+    }
+  })
 
   // decrease max speed
+  d.getElementById('reduceMaxSpeed').addEventListener('click', () => {
+    const maxSpeed = currentAircraft.maxSpeed
+    if (maxSpeed > currentAircraft.minSpeed + 5) {
+      currentAircraft.setMaxSpeed(maxSpeed - 5)
+      d.getElementById('selectedMaxSpeed').innerText = formatAirspeed(currentAircraft.maxSpeed)
+    }
+  })
 
   // close instruction modal
   d.getElementById('closeInstructionalModal').addEventListener('click', () => {
