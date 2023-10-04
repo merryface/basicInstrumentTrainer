@@ -87,7 +87,6 @@ const triggerInstruction = (doc, aircraft) => {
   d.getElementById('altitude').oninput = function() {
     const slider = d.getElementById('currentAltSliderPosition')
     slider.innerText = this.value*100
-    console.log(slider, this.value)
   }
 
   // Set Max Altitude
@@ -96,6 +95,19 @@ const triggerInstruction = (doc, aircraft) => {
     currentAircraft.setMaxAltitude(maxAltitude)
     d.getElementById('selectedMaxAltitude').innerText = formatAltitude(maxAltitude)
   })
+
+  // increase min speed
+  d.getElementById('increaseMinSpeed').addEventListener('click', () => {
+    const minSpeed = currentAircraft.minSpeed
+    currentAircraft.setMinSpeed(minSpeed + 5)
+    d.getElementById('selectedMinSpeed').innerText = formatAirspeed(currentAircraft.minSpeed)
+  })
+
+  // decrease min speed
+
+  // increase max speed
+
+  // decrease max speed
 
   // close instruction modal
   d.getElementById('closeInstructionalModal').addEventListener('click', () => {
