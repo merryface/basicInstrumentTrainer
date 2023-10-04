@@ -37,7 +37,7 @@ export function generateInstruction(aircraft) {
 
   // altitude
   if (selectedInstruction === 1) {
-    const newAltitude = getRandomAltitude(aircraft.altitude);
+    const newAltitude = getRandomAltitude(aircraft.altitude, aircraft.minAltitude, aircraft.maxAltitude);
     const climbDescentCalculation = climbDescentCalculator(aircraft.altitude, newAltitude);
     const altitudeInstruction = verticalInstruction(aircraft.callsign, climbDescentCalculation, formatAltitude(newAltitude));
 
@@ -51,7 +51,7 @@ export function generateInstruction(aircraft) {
 
   // speed
   if (selectedInstruction === 2) {
-    const newSpeed = getRandomSpeed(aircraft.speed);
+    const newSpeed = getRandomSpeed(aircraft.speed, aircraft.minSpeed, aircraft.maxSpeed);
     const speedCalculation = speedCalculator(aircraft.speed, newSpeed);
     const airspeedInstruction = speedInstruction(aircraft.callsign, newSpeed);
 

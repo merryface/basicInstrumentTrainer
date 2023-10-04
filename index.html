@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="module" src="./main.js"></script>
+  <script src="https://kit.fontawesome.com/fe91e7cc39.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./styleSettings.css">
   <title>Basic Instrument Trainer</title>
 </head>
 <body>
@@ -26,15 +28,53 @@
     <p id="instruction">Standby for instruction</p>
     <button id="generateInstruction">Commence</button>
 
-    <div class="setCallsign">
-      <label>
-        Callsign
-        <input id="desiredCallsign" type="text">
-      </label>
-      <button id="setCallsignButton">Set callsign</button>
-    </div>
-
       <a href="https://www.anc-academy.aero/">ANC Academy</a>
+  </div>
+
+  <div id="openInstruction">i</div>
+  <div id="instructionsModal">
+    <div class="modalInstructions">
+      <p class="modalInstructionsText">
+        This trainer is designed to help you practice your basic instrument flying skills. It will give you instructions to fly a heading, altitude and airspeed. Start in the simulator flying North, at 3000ft, at 105kt, ideally somewhere with no terrain nearby. You can then fly your simulator aircraft to the desired parameters. When you are ready, click the "Commence" button to generate your first instruction. The app will allow sufficient time for you to complete your maneuvre before issuing you a different set of instructions.
+      </p>
+      <button class="closeModal" id="closeInstructionalModal">Close</button>
+    </div>
+  </div>
+
+  <div id="openSettings">
+    <i class="fas fa-cog"></i>
+  </div>
+  <div id="settingsModal">
+    <div class="settingsContainer">
+      <div class="settings">
+        <h2>Settings</h2>
+        <label>
+          <p>Current Callsign: <span id="currentCallsign">A-BCDE</span></p>
+          <input id="desiredCallsign" type="text">
+          <button id="setCallsignButton">Set callsign</button>
+        </label>
+        <label>
+          <p>Max Altitude: <span id="selectedMaxAltitude">5000ft</span></p>
+          <input type="range" min="30" max="100" value="50" class="slider" id="altitude">
+          <p class="currentAltSliderPosition" id="currentAltSliderPosition">5000</p>
+          <button id="setMaxAltitude">Set Max Altitude</button>
+        </label>
+        <label>
+          <p>Minimum Speed: <span id="selectedMinSpeed">70kt</span></p>
+          <div class="plusMinusButtons">
+            <button class="changeSpeed" id="reduceMinSpeed">-</button>
+            <button class="changeSpeed" id="increaseMinSpeed">+</button>
+          </div>
+          <p >Maximum Speed: <span id="selectedMaxSpeed">115kt</span></p>
+          <div class="plusMinusButtons">
+            <button class="changeSpeed" id="reduceMaxSpeed">-</button>
+            <button class="changeSpeed" id="increaseMaxSpeed">+</button>
+          </div>
+        </label>
+        <button class="closeModal" id="closeSettingsModal">Close</button>
+      </div>
+
+    </div>
   </div>
 </body>
 </html>

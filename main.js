@@ -75,10 +75,82 @@ const triggerInstruction = (doc, aircraft) => {
     currentAircraft.setCallsign(currentCallsign)
     console.log(currentCallsign)
     d.getElementById('desiredCallsign').value = ""
+    d.getElementById('currentCallsign').innerText = currentCallsign
 
     isFlying ?
     updateUI(d, currentAircraft,  generateInstruction(currentAircraft))
     :
-    updateUI(d, currentAircraft,  `${currentCallsign}, standby`)
+    updateUI(d, currentAircraft, `${currentCallsign}, standby`)
   })
+
+  // Display chosen altitude
+  d.getElementById('altitude').oninput = function() {
+    const slider = d.getElementById('currentAltSliderPosition')
+    slider.innerText = this.value*100
+  }
+
+  // Set Max Altitude
+  d.getElementById('setMaxAltitude').addEventListener('click', () => {
+    const maxAltitude = d.getElementById('altitude').value*100
+    currentAircraft.setMaxAltitude(maxAltitude)
+    d.getElementById('selectedMaxAltitude').innerText = formatAltitude(maxAltitude)
+  })
+
+  // increase min speed
+  d.getElementById('increaseMinSpeed').addEventListener('click', () => {
+    const minSpeed = currentAircraft.minSpeed
+    if (minSpeed < currentAircraft.maxSpeed - 5) {
+    currentAircraft.setMinSpeed(minSpeed + 5)
+    d.getElementById('selectedMinSpeed').innerText = formatAirspeed(currentAircraft.minSpeed)
+    }
+  })
+
+  // decrease min speed
+  d.getElementById('reduceMinSpeed').addEventListener('click', () => {
+    const minSpeed = currentAircraft.minSpeed
+    if (minSpeed > 50) {
+      currentAircraft.setMinSpeed(minSpeed - 5)
+      d.getElementById('selectedMinSpeed').innerText = formatAirspeed(currentAircraft.minSpeed)
+    }
+  })
+
+  // increase max speed
+  d.getElementById('increaseMaxSpeed').addEventListener('click', () => {
+    const maxSpeed = currentAircraft.maxSpeed
+    if (maxSpeed < 250) {
+      currentAircraft.setMaxSpeed(maxSpeed + 5)
+      d.getElementById('selectedMaxSpeed').innerText = formatAirspeed(currentAircraft.maxSpeed)
+    }
+  })
+
+  // decrease max speed
+  d.getElementById('reduceMaxSpeed').addEventListener('click', () => {
+    const maxSpeed = currentAircraft.maxSpeed
+    if (maxSpeed > currentAircraft.minSpeed + 5) {
+      currentAircraft.setMaxSpeed(maxSpeed - 5)
+      d.getElementById('selectedMaxSpeed').innerText = formatAirspeed(currentAircraft.maxSpeed)
+    }
+  })
+
+  // close instruction modal
+  d.getElementById('closeInstructionalModal').addEventListener('click', () => {
+    d.getElementById('instructionsModal').style.display = "none"
+  })
+
+  // open instruction modal
+  d.getElementById('openInstruction').addEventListener('click', () => {
+    d.getElementById('instructionsModal').style.display = "block"
+  })
+
+  // open settings modal
+  d.getElementById('openSettings').addEventListener('click', () => {
+    d.getElementById('settingsModal').style.display = "block"
+  })
+
+  // close settings modal
+  d.getElementById('closeSettingsModal').addEventListener('click', () => {
+    d.getElementById('settingsModal').style.display = "none"
+  })
+
+
 })(document);
