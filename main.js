@@ -132,6 +132,15 @@ const triggerInstruction = (doc, aircraft) => {
     }
   })
 
+  // expand menu
+  let menuOpen = false;
+  d.getElementById('expandableMenu').addEventListener('click', () => {
+    if (!menuOpen) d.getElementById('menuItems').style.display = "flex"
+    if (menuOpen) d.getElementById('menuItems').style.display = "none"
+    menuOpen = !menuOpen
+
+  })
+
   // close instruction modal
   d.getElementById('closeInstructionalModal').addEventListener('click', () => {
     d.getElementById('instructionsModal').style.display = "none"

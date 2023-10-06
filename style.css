@@ -10,10 +10,6 @@ body {
   display: block;
 }
 
-.container {
-  max-height: 100vw;
-}
-
 h1 {
   text-align: center;
 }
@@ -90,21 +86,50 @@ a {
   display: block;
 }
 
+#expandableMenu {
+  position: fixed;
+  z-index: 1;
+  left: 1rem;
+  top: 1rem;
+  transition: width ease-in-out 0.3s;
+}
+
+#expandIcon {
+  background-color: #0E1B8F;
+  margin: 0;
+  padding: 1rem;
+  z-index: 1;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+}
+
+#expandIcon i {
+  color: #fff;
+}
+
+#menuItems {
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 0.3rem;
+}
+
 #openInstruction, #openSettings {
   background-color: #0E1B8F;
   color: #fff;
   margin: 0;
   padding: 1rem;
   z-index: 1;
-  position: fixed;
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
   text-align: center;
-  bottom: 3rem;
 }
 
-#openInstruction:hover, #openSettings:hover {
+#openInstruction:hover, #openSettings:hover, .expandableMenu:hover {
   cursor: pointer;
 }
 
