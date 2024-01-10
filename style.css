@@ -166,7 +166,7 @@ a {
 }
 
 #settingsModal {
-  display: none;
+  z-index: 1;
 }
 
 .modalInstructionsText {
