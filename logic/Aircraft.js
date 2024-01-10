@@ -1,6 +1,6 @@
 export class Aircraft {
   constructor(
-    callsign = "A-BCDE",
+    callsign = "A-DE",
     speed = 105,
     minSpeed = 70,
     maxSpeed = 115,
