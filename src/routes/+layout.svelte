@@ -1,5 +1,6 @@
 <script>
-    import "../app.css"; 
+  import "../app.css"; 
+  import AircraftEditor from "$lib/components/AircraftEditor.svelte";
 </script>
 
 
@@ -22,6 +23,8 @@
             <!-- Sidebar content here -->
             <li><a href="/">Dashboard</a></li>
             <li><a href="/basic-trainer">Basic Trainer</a></li>
+            <!-- Aircraft Editor -->
+            <AircraftEditor />
           </ul>
         </div>
       </div>

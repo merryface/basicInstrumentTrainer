@@ -25,7 +25,7 @@
       buttonLabel = "Start";
       $currentAircraft = new Aircraft()
       targetHeading = '360°';
-      targetAltitude = '3000ft';
+      targetAltitude = '3,000ft';
       targetAirspeed = '105kt';
       if (intervalId) {
         clearInterval(intervalId);

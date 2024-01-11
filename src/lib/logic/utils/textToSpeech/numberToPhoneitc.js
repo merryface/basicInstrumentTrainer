@@ -11,7 +11,8 @@ export function numberToPhonetic(number) {
     '7': 'sefen',
     '8': 'eight',
     '9': 'niner',
-    '°': 'degrees'
+    '°': 'degrees',
+    '000': 'three six zero',
   };
   return number.split('').map(digit => digitMap[digit] || digit).join(' ');
 }

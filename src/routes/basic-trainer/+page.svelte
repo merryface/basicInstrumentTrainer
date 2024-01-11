@@ -13,7 +13,7 @@
   let countDown;
   let intervalId;
   let targetHeading = '360°';
-  let targetAltitude = '3000ft';
+  let targetAltitude = '3,000ft';
   let targetAirspeed = '105kt';
   let instruction = 'Standby for instruction';
   let buttonLabel = "Start"

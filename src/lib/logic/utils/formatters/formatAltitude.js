@@ -1,3 +1,3 @@
 export function formatAltitude(altitude) {
-  return `${altitude}ft`
+  return `${Number(altitude).toLocaleString()}ft`;
 }
