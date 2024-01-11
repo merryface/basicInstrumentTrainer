@@ -36,7 +36,7 @@
 </script>
 
 <h2 class="text-center">{exerciseHeading}</h2>
-<div class="card w-96 bg-base-100 bg-blue-700 flex flex-col items-center justify-center text-center mx-auto">
+<div class="card w-96 bg-base-100 outline flex flex-col items-center justify-center text-center mx-auto">
   <div class="card-body">
     <p class="currentInstructions">Current Instructions:</p>
     <div class="targets">
@@ -54,7 +54,7 @@
   <p class="instructions">{instruction}</p>
 </div>
 
-<button on:click={commenceFlight} class="btn btn-wide btn-sm sm:btn-sm md:btn-md lg:btn-lg btn-outline btn-success mx-auto">{buttonLabel}</button>
+<button on:click={commenceFlight} class="btn btn-wide btn-sm sm:btn-sm md:btn-md lg:btn-lg btn-outline mx-auto">{buttonLabel}</button>
 
 <style>
   h2 {
