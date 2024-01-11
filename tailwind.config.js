@@ -6,7 +6,12 @@ export default {
   plugins: [require("daisyui")],
   daisyui: {
     themes: [
-      "synthwave"
+      "synthwave",
+      "dark",
+      "cupcake",
+      "bumblebee",
+      "cyberpunk",
+      "night"
     ]
   }
 }
