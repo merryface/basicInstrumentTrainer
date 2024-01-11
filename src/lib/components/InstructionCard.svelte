@@ -1,4 +1,5 @@
 <script>
+	import { Aircraft } from '$lib/logic/Aircraft.js';
   import { currentAircraft } from '$lib/store.js';
   export let targetHeading
   export let targetAltitude
@@ -22,6 +23,10 @@
       console.log("stop flying");
       isFlying = false;
       buttonLabel = "Start";
+      $currentAircraft = new Aircraft()
+      targetHeading = '360°';
+      targetAltitude = '3000ft';
+      targetAirspeed = '105kt';
       if (intervalId) {
         clearInterval(intervalId);
       }
