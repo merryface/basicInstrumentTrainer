@@ -31,3 +31,9 @@
 <div class="min-h-screen flex flex-col mx-auto p-5">
     <slot/>
 </div>
+
+<style>
+  .drawer {
+    z-index: 100;
+  }
+</style>
