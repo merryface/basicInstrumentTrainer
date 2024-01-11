@@ -12,7 +12,7 @@
   <form>
     <label>
       Callsign:
-      <input type="text" class="input-secondary input w-full max-w-xs" bind:value={$currentAircraft.callsign}>
+      <input type="text" class="input-secondary input w-full max-w-xs input-sm" bind:value={$currentAircraft.callsign}>
     </label>
     
     <label>
@@ -46,7 +46,7 @@
     margin-bottom: 1rem;
     font-size: 1.5rem;
   }
-  
+
   form {
     display: flex;
     flex-direction: column;
