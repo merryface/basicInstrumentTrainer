@@ -1,4 +1,5 @@
 <script>
+  import { currentAircraft } from '$lib/store.js';
 	import InstructionCard from '$lib/components/InstructionCard.svelte';
   import { formatHeading } from '$lib/logic/utils/formatters/formatHeading.js';
   import { Aircraft } from '$lib/logic/Aircraft.js';
@@ -17,10 +18,12 @@
   let instruction = 'Standby for instruction';
   let buttonLabel = "Start"
 
-  const triggerInstruction = (aircraft) => {
+  const triggerInstruction = () => {
     if (intervalId) {
       clearInterval(intervalId);
     }
+
+    const aircraft = $currentAircraft
 
     const instructionData = generateInstruction(aircraft);
     if (instructionData.instructionType === 'heading') aircraft.setHeading(instructionData.heading);
@@ -45,12 +48,10 @@
     }, countDown*1000);
   }
 
-  const currentAircraft = new Aircraft();
 </script>
   
   <InstructionCard
     exerciseHeading="Basic Trainer"
-    {currentAircraft}
     {targetHeading}
     {targetAltitude}
     {targetAirspeed}

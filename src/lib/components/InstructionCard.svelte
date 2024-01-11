@@ -1,10 +1,10 @@
 <script>
+  import { currentAircraft } from '$lib/store.js';
   export let targetHeading
   export let targetAltitude
   export let targetAirspeed
   export let instruction
   export let exerciseHeading
-  export let currentAircraft
   export let intervalId;
 
   export let buttonLabel = "Start"
@@ -17,7 +17,7 @@
       console.log("start flying");
       isFlying = true;
       buttonLabel = "Stop";
-      triggerInstruction(currentAircraft);
+      triggerInstruction($currentAircraft);
     } else {
       console.log("stop flying");
       isFlying = false;
