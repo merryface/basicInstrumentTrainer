@@ -75,6 +75,7 @@
 
   .card {
     width: 90%;
+    max-width: 600px;
   }
 
   .card, .instructions {
