@@ -12,9 +12,9 @@
   let countDown;
   let intervalId;
   let isFlying = false;
-  let targetHeading = '';
-  let targetAltitude = '';
-  let targetAirspeed = '';
+  let targetHeading = '360°';
+  let targetAltitude = '3000ft';
+  let targetAirspeed = '105kt';
   let instruction = 'Standby for instruction';
   let buttonLabel = "Start"
 
@@ -65,24 +65,61 @@
   }
 </script>
   
-  <h2>Basic Trainer</h2>
+  <h2 class="text-center">Basic Trainer</h2>
   
-  <div>
-    <p class="currentInstructions">Current Instructions:</p>
-    <div class="targets">
-      <div class="target">
-        <p id="targetHeading">{targetHeading}</p>
-      </div>
-      <div class="target">
-        <p id="targetAltitude">{targetAltitude}</p>
-      </div>
-      <div class="target">
-        <p id="targetAirspeed">{targetAirspeed}</p>
+  <div class="card w-96 bg-base-100 bg-blue-700 flex flex-col items-center justify-center text-center mx-auto">
+    <div class="card-body">
+      <p class="currentInstructions">Current Instructions:</p>
+      <div class="targets">
+        <div class="target">
+          <p class="instruction">{targetHeading}</p>
+        </div>
+        <div class="target">
+          <p class="instruction">{targetAltitude}</p>
+        </div>
+        <div class="target">
+          <p class="instruction">{targetAirspeed}</p>
+        </div>
       </div>
     </div>
-  
-    <p id="instruction">{instruction}</p>
-    <button id="generateInstruction" on:click={commenceFlight}>{buttonLabel}</button>
-  
-    <a href="https://www.anc-academy.aero/">ANC Academy</a>
+    <p class="instructions">{instruction}</p>
   </div>
+
+  <button on:click={commenceFlight} class="btn btn-wide btn-sm sm:btn-sm md:btn-md lg:btn-lg btn-outline btn-success mx-auto">{buttonLabel}</button>
+
+  <a class="mx-auto link" href="https://www.anc-academy.aero/">ANC Academy</a>
+
+  <style>
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .card, .instructions {
+      margin-bottom: 2rem;
+    }
+
+    .currentInstructions {
+      font-weight: bold;
+    }
+
+    .instruction {
+      border: 1px solid white;
+      border-radius: 5px;
+      height: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .targets {
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+    }
+
+    button {
+      margin-bottom: 2rem;
+    }
+  </style>
