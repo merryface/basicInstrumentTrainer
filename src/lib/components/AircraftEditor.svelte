@@ -1,7 +1,6 @@
 <script>
   import { currentAircraft } from '$lib/store.js';
   import { formatAltitude } from '$lib/logic/utils/formatters/formatAltitude.js';
-
 </script>
 
 
@@ -14,6 +13,18 @@
       Callsign:
       <input type="text" class="input-secondary input w-full max-w-xs input-sm" bind:value={$currentAircraft.callsign}>
     </label>
+
+    <label>
+      Presets:
+      <select class="select select-bordered w-full max-w-xs">
+        <option disabled selected>Select aircraft type</option>
+        <option>Cessna 172</option>
+        <option>Pa28</option>
+        <option>Pa38 / Cessna 152</option>
+        <option>Diamond Da42</option>
+        <option>Beechcraft Baron 58</option>
+      </select>
+    </label>
     
     <label>
       Max Altitude:
@@ -24,7 +35,7 @@
     <label>
       Min Altitude:
       {formatAltitude($currentAircraft.minAltitude)}
-      <input type="range" min="25000" max={$currentAircraft.maxAltitude - 1000} step="100" class="range range-primary" bind:value={$currentAircraft.minAltitude} />
+      <input type="range" min="2500" max={$currentAircraft.maxAltitude - 1000} step="100" class="range range-primary" bind:value={$currentAircraft.minAltitude} />
     </label>
     
     <label>

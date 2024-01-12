@@ -1,5 +1,6 @@
 export class Aircraft {
   constructor(
+    aircraftType = "preset",
     callsign = "A-DE",
     speed = 105,
     minSpeed = 70,
@@ -9,6 +10,7 @@ export class Aircraft {
     maxAltitude = 5000,
     heading = 360
     ) {
+    this.aircraftType = aircraftType;
     this.speed = speed;
     this.minSpeed = minSpeed;
     this.maxSpeed = maxSpeed;
