@@ -2,9 +2,11 @@
   import { currentAircraft, aircrafts } from '$lib/store.js';
   import { formatAltitude } from '$lib/logic/utils/formatters/formatAltitude.js';
   let selectedAircraft = $currentAircraft;
+  let previousCallsign = $currentAircraft.callsign;
 
-  $: if (selectedAircraft) {
-    currentAircraft.set(selectedAircraft);
+  $: if (selectedAircraft && selectedAircraft !== $currentAircraft) {
+    previousCallsign = $currentAircraft.callsign;
+    currentAircraft.set({...selectedAircraft, callsign: previousCallsign});
   }
 </script>
 
@@ -21,7 +23,7 @@
 
     <label>
       Presets:
-      <select class="select select-bordered w-full max-w-xs" bind:value={selectedAircraft}>
+      <select class="select select-bordered w-full max-w-xs select-sm select-secondary" bind:value={selectedAircraft}>
         <option disabled selected value={currentAircraft}>Select aircraft type</option>
         {#each $aircrafts as aircraft (aircraft)}
           <option value={aircraft}>{aircraft.aircraftType}</option>
