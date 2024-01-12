@@ -1,6 +1,11 @@
 <script>
-  import { currentAircraft } from '$lib/store.js';
+  import { currentAircraft, aircrafts } from '$lib/store.js';
   import { formatAltitude } from '$lib/logic/utils/formatters/formatAltitude.js';
+  let selectedAircraft = $currentAircraft;
+
+  $: if (selectedAircraft) {
+    currentAircraft.set(selectedAircraft);
+  }
 </script>
 
 
@@ -16,13 +21,11 @@
 
     <label>
       Presets:
-      <select class="select select-bordered w-full max-w-xs">
-        <option disabled selected>Select aircraft type</option>
-        <option>Cessna 172</option>
-        <option>Pa28</option>
-        <option>Pa38 / Cessna 152</option>
-        <option>Diamond Da42</option>
-        <option>Beechcraft Baron 58</option>
+      <select class="select select-bordered w-full max-w-xs" bind:value={selectedAircraft}>
+        <option disabled selected value={currentAircraft}>Select aircraft type</option>
+        {#each $aircrafts as aircraft (aircraft)}
+          <option value={aircraft}>{aircraft.aircraftType}</option>
+        {/each}
       </select>
     </label>
     
