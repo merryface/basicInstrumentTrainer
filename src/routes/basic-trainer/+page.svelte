@@ -2,7 +2,6 @@
   import { currentAircraft } from '$lib/store.js';
 	import InstructionCard from '$lib/components/InstructionCard.svelte';
   import { formatHeading } from '$lib/logic/utils/formatters/formatHeading.js';
-  import { Aircraft } from '$lib/logic/Aircraft.js';
   import { formatAltitude } from '$lib/logic/utils/formatters/formatAltitude.js';
   import { formatAirspeed } from '$lib/logic/utils/formatters/formatAirspeed.js';
   import { generateInstruction } from '$lib/logic/utils/instructions/generateInstruction.js';

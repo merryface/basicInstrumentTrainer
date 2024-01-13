@@ -19,10 +19,18 @@
         </div> 
         <div class="drawer-side">
           <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-          <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+          <ul class="menu menu-sm bg-base-200 w-56 rounded-box">
             <!-- Sidebar content here -->
-            <li><a href="/">Dashboard</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/basic-trainer">Basic Trainer</a></li>
+            <li>
+              <details>
+                <summary>Set Patterns</summary>
+                <ul>
+                  <li><a href="/members/pattern-a">Pattern A</a></li>
+                </ul>
+              </details>
+            </li>
             <!-- Aircraft Editor -->
             <AircraftEditor />
           </ul>
