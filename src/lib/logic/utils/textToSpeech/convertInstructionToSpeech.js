@@ -1,4 +1,4 @@
-import { numberToPhonetic } from "./numberToPhoneitc.js";
+import { numberToPhonetic } from "./numberToPhonetic.js";
 import { wordToPhonetic } from "./wordToPhonetic.js";
 
 export function convertInstructionToSpeech(instruction) {
