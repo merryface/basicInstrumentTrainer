@@ -4,6 +4,7 @@
   
   // Data
   import { currentAircraft } from '$lib/store.js';
+  import patternA from '$lib/pattern_images/pattern-a.png';
   
   // Speech
 	import { convertInstructionToSpeech } from '$lib/logic/utils/textToSpeech/convertInstructionToSpeech.js';
@@ -23,7 +24,6 @@
   // Set turn calculation
   let countDown;
   let intervalId;
-  let isFlying = false;
   let currentId = 0;
   let patternCount = 0;
   let targetHeading = '360°';
@@ -63,19 +63,48 @@
       triggerInstruction(aircraft);
     }, countDown*1000);
   }
-
 </script>
   
-  <InstructionCard
-    exerciseHeading="Training Pattern A"
-    {targetHeading}
-    {targetAltitude}
-    {targetAirspeed}
-    {instruction}
-    {triggerInstruction}
-    {intervalId}
-    {buttonLabel}
-  />
-  <p>Times pattern flown: { patternCount }</p>
+<InstructionCard
+  exerciseHeading="Training Pattern A"
+  {targetHeading}
+  {targetAltitude}
+  {targetAirspeed}
+  {instruction}
+  {triggerInstruction}
+  {intervalId}
+  {buttonLabel}
+  {patternCount}
+/>
 
-  <a class="mx-auto link" href="https://www.anc-academy.aero/">ANC Academy</a>
+<div tabindex="0" class="collapse bg-base-300 collapse-arrow border focus:bg-info-content">
+  <div class="collapse-title text-xl font-medium">
+    What is Pattern A?
+  </div>
+  <div class="collapse-content"> 
+    <div class="card bg-base-100 shadow-xl">
+      <div class="card-body">
+        <h2 class="card-title">Pattern A</h2>
+        <p>Pattern A is the first of a series of instrument training flight patterns. Flying in a square circuit at constant speed and height. Master the square, and fly it in exactly 6 minutes!</p>
+      </div>
+      <figure><img src={patternA} alt="Pattern A" /></figure>
+    </div>
+  </div>
+</div>
+
+
+<a class="mx-auto link" href="https://www.anc-academy.aero/">ANC Academy</a>
+
+  <style>
+    .collapse {
+      width: 90%;
+      max-width: 600px;
+      align-self: center;
+      margin-top: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      padding-bottom: 1rem;
+    }
+  </style>

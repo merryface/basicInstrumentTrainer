@@ -1,12 +1,12 @@
 <script>
-	import { Aircraft } from '$lib/logic/Aircraft.js';
   import { currentAircraft } from '$lib/store.js';
   export let targetHeading
   export let targetAltitude
   export let targetAirspeed
   export let instruction
   export let exerciseHeading
-  export let intervalId;
+  export let intervalId
+  export let patternCount
 
   export let buttonLabel = "Start"
   export let triggerInstruction
@@ -25,10 +25,11 @@
       buttonLabel = "Start";
       $currentAircraft.setHeading(360);
       $currentAircraft.setAltitude(3000);
-      $currentAircraft.setAirspeed(105);
+      $currentAircraft.setSpeed(105);
       targetHeading = '360°';
       targetAltitude = '3,000ft';
       targetAirspeed = '105kt';
+      instruction = 'Press Start to commence flight';
       if (intervalId) {
         clearInterval(intervalId);
       }
@@ -37,7 +38,7 @@
 
 </script>
 
-<div class="container">
+<div class="flex flex-col items-center justify-center text-center">
   <h2 class="text-center">{exerciseHeading}</h2>
   <div class="card bg-base-100 outline flex flex-col items-center justify-center text-center mx-auto">
     <div class="card-body">
@@ -57,7 +58,10 @@
     <p class="instructions">{instruction}</p>
   </div>
   
-  <button on:click={commenceFlight} class="btn btn-wide btn-sm sm:btn-sm md:btn-md lg:btn-lg btn-outline mx-auto">{buttonLabel}</button>
+  <button on:click={commenceFlight} class="btn btn-wide btn-sm sm:btn-sm md:btn-md lg:btn-lg btn-outline mx-auto center">{buttonLabel}</button>
+  {#if patternCount != null}
+    <p class="cycles">Patterns Completed: { patternCount }</p>
+  {/if}
 </div>
 
 <style>
