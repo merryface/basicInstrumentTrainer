@@ -23,7 +23,9 @@
       console.log("stop flying");
       isFlying = false;
       buttonLabel = "Start";
-      $currentAircraft = new Aircraft()
+      $currentAircraft.setHeading(360);
+      $currentAircraft.setAltitude(3000);
+      $currentAircraft.setAirspeed(105);
       targetHeading = '360°';
       targetAltitude = '3,000ft';
       targetAirspeed = '105kt';

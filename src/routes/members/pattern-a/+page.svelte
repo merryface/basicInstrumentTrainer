@@ -12,18 +12,20 @@
   
   // Set Pattern and Instructions
   const patternAlpha = [
-    { instruction: `Maintain heading `, targetHeading: 360, countDown: 60 },
-    { instruction: `Turn right to heading ${numberToPhonetic('090°')}`, targetHeading: 90, countDown: 90},
-    { instruction: `Turn right to heading ${numberToPhonetic('180°')}`, targetHeading: 180, countDown: 90},
-    { instruction: `Turn right to heading ${numberToPhonetic('270°')}`, targetHeading: 270, countDown: 90 },
-    { instruction: `Turn right to heading ${numberToPhonetic('360°')}`, targetHeading: 360, countDown: 90 },
+    { instruction: 'Maintain heading ', targetHeading: 360, countDown: 60 },
+    { instruction: 'Turn right to heading ', targetHeading: 90, countDown: 90},
+    { instruction: 'Turn right to heading ', targetHeading: 180, countDown: 90},
+    { instruction: 'Turn right to heading ', targetHeading: 270, countDown: 90 },
+    { instruction: 'Turn right to heading ', targetHeading: 360, countDown: 90 },
   ]
 
   
   // Set turn calculation
   let countDown;
   let intervalId;
+  let isFlying = false;
   let currentId = 0;
+  let patternCount = 0;
   let targetHeading = '360°';
   let targetAltitude = '3,000ft';
   let targetAirspeed = '105kt';
@@ -41,6 +43,7 @@
     // finshed array
     if (currentId === patternAlpha.length - 1) {
       currentId = 0;
+      patternCount += 1;
     }
 
     const currentInstruction = patternAlpha[currentId];
@@ -73,5 +76,6 @@
     {intervalId}
     {buttonLabel}
   />
+  <p>Times pattern flown: { patternCount }</p>
 
   <a class="mx-auto link" href="https://www.anc-academy.aero/">ANC Academy</a>
